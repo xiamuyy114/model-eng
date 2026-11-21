@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grain-boundary-preprocessing"
+version = "0.1.0"
+description = "Fixed preprocessing channels for metallographic grain-boundary segmentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+    "numpy>=1.24,<3",
+    "opencv-python-headless>=4.8,<5",
+    "Pillow>=10",
+    "PyYAML>=6",
+    "scikit-image>=0.22",
+    "segmentation-models-pytorch==0.5.0",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "scipy>=1.11",
+    "pandas>=2.0",
+]
+
+[project.scripts]
+segtrue = "segtrue.cli.paper:main"
+
+[tool.setuptools]
+package-dir = {segtrue = "."}
+packages = [
+    "segtrue",
+    "segtrue.analysis",
+    "segtrue.cli",
+    "segtrue.data",
+    "segtrue.degrade",
+    "segtrue.engine",
+    "segtrue.models",
+    "segtrue.preprocess",
+    "segtrue.utils",
+]
+
+[tool.setuptools.package-data]
+segtrue = [
+    "data/splits/*.json",
+    "provenance/checkpoints.csv",
+    "configs/dataset/*.yaml",
+    "configs/experiment/*.yaml",
+    "configs/runtime/*.yaml",
+    "NOTICE",
+]

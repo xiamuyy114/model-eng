@@ -1,0 +1,16 @@
+task_name: architecture_benchmark
+datasets: ["tio", "316l"]
+preprocesses: ["rgb", "sobel", "canny", "gabor", "sobel_gabor", "clahe", "lbp"]
+architectures: ["deeplabv3plus_r34"]
+dataset_seeds:
+  tio: [42, 2024, 12345, 7, 123]
+  316l: [42, 2024, 12345, 7, 123]
+trainer:
+  epochs: 50
+  batch_size:
+    deeplabv3plus_r34: 4
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  threshold: 0.5
+evaluation:
+  degradation_seed: 0

@@ -1,0 +1,15 @@
+runtime:
+  num_workers: 0
+  pin_memory: false
+  deterministic: true
+  amp: true
+  cudnn_benchmark: false
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+evaluation:
+  threshold: 0.5
+preprocess:
+  rgb_norm_mean: [0.485, 0.456, 0.406]
+  rgb_norm_std: [0.229, 0.224, 0.225]

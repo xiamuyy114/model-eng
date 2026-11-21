@@ -1,0 +1,7 @@
+dataset_key: tio
+display_name: TA2
+image_dir: data/tio/micrographs
+mask_dir: data/tio/masks
+image_prefix: RG
+mask_prefix: RGMask
+group_pattern: "^RG\\d+"

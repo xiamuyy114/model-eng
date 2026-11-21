@@ -1,0 +1,7 @@
+dataset_key: 316l
+display_name: 316L
+image_dir: data/316l/micrographs
+mask_dir: data/316l/masks
+image_prefix: RG
+mask_prefix: RGMask
+group_pattern: "^RG\\d+"
